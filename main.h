@@ -16,7 +16,7 @@ void (*f)(va_list);
 } p_opt;
 
 
-void _putchar();
+int _putchar(char c);
 
 int _printf(const char *format, ...);
 

@@ -5,18 +5,17 @@
 * _printf - Prints everything 
 *@format: list of formaters for _printf
 */
-void print_string(va_list list, int sum)
+void print_string(va_list list)
 {
 	int i;
 	char *str;
 
-	str = va_args(list, char *);
+	str = va_arg(list, char *);
 	if (str)
 	{
 		for (i = 0; str[i]; i++)
 			_putchar(str[i]);
 		i++;
-		sum += i;
 		return;
 	}
 	return;
@@ -26,10 +25,9 @@ void print_string(va_list list, int sum)
 * _printf - Prints everything 
 *@format: list of formaters for _printf
 */
-int print_char (va_list list, int sum)
+void print_char (va_list list)
 {
-	_putchar(va_args(list, int));
-	sum++;
+	_putchar(va_arg(list, int));
 }
 
 /**
@@ -41,8 +39,8 @@ int print_char (va_list list, int sum)
 
 int _printf(const char *format, ...)
 {
-	int sum, i, j, k;
-	p_opt check = {
+	int i, j;
+	p_opt check[] = {
 		{"c", print_char},
 		{"s", print_string}
 	};
@@ -53,32 +51,25 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')	
 		{
+			i++;
 			j = 0;	
 			while (j < 2)
 			{
-			if (format[i + 1] == *(check[j].t))
+			if (format[i] == *(check[j].t))
 				{
-					check[i].f(list, sum);		
+					check[j].f(list);
+					i++;
 					break;
 				}
 				j++;
 			}
-			i++;
 		}
 		_putchar(format[i]);
 	}
 	va_end(list);
 
-	}
-	i++;
-	return (sum + i);
+	return (i);
 }
-
-
-
-
-
-
 
 
 
