@@ -16,6 +16,8 @@ void (*f)(va_list);
 } p_opt;
 
 
+void _putchar();
+
 int _printf(const char *format, ...);
 
 #endif
