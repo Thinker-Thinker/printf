@@ -2,8 +2,8 @@
 #include <stdarg.h>
 #include "main.h"
 /**
-* _printf - Prints everything 
-*@format: list of formaters for _printf
+* print_string - Prints a string
+* @list: string to be printed
 */
 void print_string(va_list list)
 {
@@ -16,14 +16,12 @@ void print_string(va_list list)
 		for (i = 0; str[i]; i++)
 			_putchar(str[i]);
 		i++;
-		return;
 	}
-	return;
 }
 
 /**
-* _printf - Prints everything 
-*@format: list of formaters for _printf
+* print_char - prints characters
+* @list: characters to be printed
 */
 void print_char (va_list list)
 {
@@ -31,12 +29,10 @@ void print_char (va_list list)
 }
 
 /**
-* _printf - Prints everything 
-*@format: list of formaters for _printf
+* _printf - Prints everything
+* @format: list of formaters for _printf
+* Return: length of passed string
 */
-
-
-
 int _printf(const char *format, ...)
 {
 	int i, j;
@@ -45,17 +41,18 @@ int _printf(const char *format, ...)
 		{"s", print_string}
 	};
 	va_list list;
+
 	va_start(list, format);
 
 	for (i = 0; format[i]; i++)
 	{
-		if (format[i] == '%')	
+		if (format[i] == '%')
 		{
 			i++;
-			j = 0;	
+			j = 0;
 			while (j < 2)
 			{
-			if (format[i] == *(check[j].t))
+				if (format[i] == *(check[j].t))
 				{
 					check[j].f(list);
 					i++;
@@ -70,11 +67,3 @@ int _printf(const char *format, ...)
 
 	return (i);
 }
-
-
-
-
-
-
-
-
