@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	len = 0;
 	i = 0;
 	va_start(list, format);
-	if (format[i] == '\0')
+	if (format == NULL)
 		return (-1);
 
 	for (i = 0; format[i]; i++)

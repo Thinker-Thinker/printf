@@ -38,10 +38,7 @@ int print_char(va_list list)
  */
 int print_mod(va_list list)
 {
-	char c = '%';
-
 	(void) list;
-
-	write(1, &c, 1);
+	_putchar('%');
 	return (1);
 }

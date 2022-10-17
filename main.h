@@ -15,6 +15,7 @@ int (*f)(va_list);
 
 } p_opt;
 
+int print_mod(va_list list);
 
 int _putchar(char c);
 int _printf(const char *format, ...);
