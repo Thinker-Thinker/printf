@@ -16,7 +16,6 @@ int print_string(va_list list)
 	{
 		for (i = 0; str[i]; i++)
 			_putchar(str[i]);
-		i++;
 	}
 	return (i);
 }
@@ -60,6 +59,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == *(check[j].t))
 				{
+					sum -= 2;
 					sum += check[j].f(list);
 					i++;
 					break;

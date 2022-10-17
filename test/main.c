@@ -13,7 +13,7 @@ int main(void)
 	printf("Numeric:\n");
 	printf("============\n");
 /* %i without param */
-	code = printf("Std: %i.\n");
+/*	code = printf("Std: %i.\n");
 	printf("Std Returns: %d\n", code);
 	code = _printf("Our: %i.\n");
 	printf("Our Returns: %d\n", code);
@@ -45,11 +45,17 @@ int main(void)
 	printf("Std Returns: %d\n", code);
 	code = _printf("Our: %%.\n");
 	printf("Our Returns: %d\n", code);
-
+*/
 	code = printf("Std: Cu%cio.us\n", '7');
 	printf("Std Returns: %d\n", code);
 	code = _printf("Our: Cu%cio.us\n", '7');
 	printf("Our Returns: %d\n", code);
+
+	code = printf("Std: Cu%sio.us\n", "Hello");
+	printf("Std Returns: %d\n", code);
+	code = _printf("Our: Cu%sio.us\n", "Hello");
+	printf("Our Returns: %d\n", code);
+
 
 	return (0);
 }
