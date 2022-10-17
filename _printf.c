@@ -37,14 +37,16 @@ int _printf(const char *format, ...)
 				if (format[i] == *(check[j].t))
 				{
 					len += check[j].f(list);
-					i++;
 					break;
 				}
 				j++;
 			}
 		}
-		_putchar(format[i]);
-		len++;
+		else
+		{
+			_putchar(format[i]);
+			len++;
+		}
 	}
 	va_end(list);
 	return (len);
