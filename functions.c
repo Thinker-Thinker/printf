@@ -12,7 +12,14 @@ int print_string(va_list list)
 	char *str;
 
 	str = va_arg(list, char *);
-	if (str)
+
+	if (str == NULL)
+	{
+		str = "(null)";
+		for (i = 0; str[i]; i++)
+			_putchar(str[i]);
+	}
+	else
 	{
 		for (i = 0; str[i]; i++)
 			_putchar(str[i]);
