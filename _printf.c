@@ -1,66 +1,34 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "main.h"
-/**
-* print_string - Prints a string
-* @list: string to be printed
-* @Return length of string
-*/
-int print_string(va_list list)
-{
-	int i;
-	char *str;
-
-	str = va_arg(list, char *);
-	if (str)
-	{
-		for (i = 0; str[i]; i++)
-			_putchar(str[i]);
-	}
-	return (i);
-}
-
-/**
-* print_char - prints characters
-* @list: characters to be printed
-* Return: length of string
-*/
-int print_char(va_list list)
-{
-	_putchar(va_arg(list, int));
-	return (1);
-}
-
-/**
-* _printf - Prints everything
-* @format: list of formaters for _printf
-* Return: length of passed string
-*/
 int _printf(const char *format, ...)
 {
-	int i, j, sum;
+	int i, j, len;
 	p_opt check[] = {
 		{"c", print_char},
-		{"s", print_string}
+		{"s", print_string},
+		{"%", print_mod},
+		{"\0", NULL}
 	};
 	va_list list;
 	
-	sum = 0;
+	len = 0;
+	i = 0;
 	va_start(list, format);
-	if (format == NULL)
+	if (format[i] == '\0')
 		return (-1);
+
 	for (i = 0; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
 			i++;
 			j = 0;
-			while (j < 2)
+			while (j < 5)
 			{
 				if (format[i] == *(check[j].t))
 				{
-					sum -= 2;
-					sum += check[j].f(list);
+					len += check[j].f(list);
 					i++;
 					break;
 				}
@@ -68,8 +36,8 @@ int _printf(const char *format, ...)
 			}
 		}
 		_putchar(format[i]);
+		len++;
 	}
 	va_end(list);
-	i = i + sum;
-	return (i);
+	return (len);
 }

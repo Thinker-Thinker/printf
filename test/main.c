@@ -56,6 +56,11 @@ int main(void)
 	code = _printf("Our: Cu%sio.us\n", "Hello");
 	printf("Our Returns: %d\n", code);
 
+	code = printf("Std: Cu%%io.us\n");
+        printf("Std Returns: %d\n", code);
+        code = _printf("Our: Cu%%io.us\n");
+        printf("Our Returns: %d\n", code);
+
 
 	return (0);
 }
