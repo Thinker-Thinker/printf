@@ -1,22 +1,23 @@
 #include "main.h"
-#inculde <stdarg.h>
+#include <stdarg.h>
+
 /**
 * print_string - Prints a string
 * @list: string to be printed
-* @Return length of string
+* Return: length of string
 */
 int print_string(va_list list)
 {
-        int i;
-        char *str;
+	int i;
+	char *str;
 
-        str = va_arg(list, char *);
-        if (str)
-        {
-                for (i = 0; str[i]; i++)
-                        _putchar(str[i]);
-        }
-        return (i);
+	str = va_arg(list, char *);
+	if (str)
+	{
+		for (i = 0; str[i]; i++)
+			_putchar(str[i]);
+	}
+	return (i);
 }
 
 /**
@@ -26,8 +27,8 @@ int print_string(va_list list)
 */
 int print_char(va_list list)
 {
-        _putchar(va_arg(list, int));
-        return (1);
+	_putchar(va_arg(list, int));
+	return (1);
 }
 /**
  * print_mod - prints "%" character
@@ -37,8 +38,8 @@ int print_char(va_list list)
  */
 int print_mod(va_list list)
 {
-        char c = '%';
+	char c = '%';
 
-        write(1, &c, 1);
-        return (1);
+	write(1, &c, 1);
+	return (1);
 }

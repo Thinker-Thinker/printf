@@ -1,6 +1,12 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include "main.h"
+/**
+ * _printf - produces output according to format
+ * @format: a character string
+ *
+ * Return: length of the string
+ */
 int _printf(const char *format, ...)
 {
 	int i, j, len;
@@ -11,7 +17,7 @@ int _printf(const char *format, ...)
 		{"\0", NULL}
 	};
 	va_list list;
-	
+
 	len = 0;
 	i = 0;
 	va_start(list, format);
