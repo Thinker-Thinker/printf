@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
-
+#include <unistd.h>
 /**
 * print_string - Prints a string
 * @list: string to be printed
@@ -39,6 +39,8 @@ int print_char(va_list list)
 int print_mod(va_list list)
 {
 	char c = '%';
+
+	(void) list;
 
 	write(1, &c, 1);
 	return (1);
