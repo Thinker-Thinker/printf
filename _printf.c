@@ -4,8 +4,9 @@
 /**
 * print_string - Prints a string
 * @list: string to be printed
+* @Return length of string
 */
-void print_string(va_list list)
+int print_string(va_list list)
 {
 	int i;
 	char *str;
@@ -17,15 +18,18 @@ void print_string(va_list list)
 			_putchar(str[i]);
 		i++;
 	}
+	return (i);
 }
 
 /**
 * print_char - prints characters
 * @list: characters to be printed
+* Return: length of string
 */
-void print_char (va_list list)
+int print_char(va_list list)
 {
 	_putchar(va_arg(list, int));
+	return (1);
 }
 
 /**
@@ -35,13 +39,14 @@ void print_char (va_list list)
 */
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int i, j, sum;
 	p_opt check[] = {
 		{"c", print_char},
 		{"s", print_string}
 	};
 	va_list list;
-
+	
+	sum = 0;
 	va_start(list, format);
 	if (format == NULL)
 		return (-1);
@@ -55,7 +60,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == *(check[j].t))
 				{
-					check[j].f(list);
+					sum += check[j].f(list);
 					i++;
 					break;
 				}
@@ -65,6 +70,6 @@ int _printf(const char *format, ...)
 		_putchar(format[i]);
 	}
 	va_end(list);
-
+	i = i + sum;
 	return (i);
 }
