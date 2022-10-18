@@ -14,8 +14,8 @@ char *t;
 int (*f)(va_list);
 
 } p_opt;
-int print_bin(va_list list);
 
+int print_bin(va_list list);
 int print_mod(va_list list);
 int print_dec(va_list list);
 int print_int(va_list list);
