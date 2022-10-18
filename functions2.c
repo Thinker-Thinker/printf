@@ -18,7 +18,8 @@ int print_bin(va_list list)
 		_putchar('0');
 		return(1);
 	}
-
+	if (a < 0)
+		return (-1);
 	for (i = 0; a > 0; i++)
 	{
 		arr[i] = a % 2;
