@@ -9,7 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j, len;
+	int i, t, j, len;
 	p_opt check[] = {
 		{"c", print_char},
 		{"s", print_string},
@@ -34,7 +34,8 @@ int _printf(const char *format, ...)
 			if (!format[i])
 				return (-1);
 			j = 0;
-			while (j < 5)
+			t = len;
+			while (j < 7)
 			{
 				if (format[i] == *(check[j].t))
 				{
@@ -42,6 +43,8 @@ int _printf(const char *format, ...)
 					break;
 				}
 				j++;
+				if (j == 6 && t == len)
+					return (-1);
 			}
 		}
 		else
