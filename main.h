@@ -1,5 +1,5 @@
-#ifndef PRINTF_H_
-#define PRINTF_H_
+#ifndef __MAIN_H__
+#define __MAIN_H__
 
 #include <stdarg.h>
 /**
@@ -14,6 +14,7 @@ char *t;
 int (*f)(va_list);
 
 } p_opt;
+int print_bin(va_list list);
 
 int print_mod(va_list list);
 int print_dec(va_list list);
@@ -23,4 +24,4 @@ int _printf(const char *format, ...);
 int print_char(va_list list);
 int print_string(va_list list);
 
-#endif /* PRINT_H_ */
+#endif /* __MAIN_H__ */
