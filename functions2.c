@@ -19,7 +19,7 @@ int print_bin(va_list list)
 		return(1);
 	}
 	if (a < 0)
-		return (-1);
+		return (0);
 	for (i = 0; a > 0; i++)
 	{
 		arr[i] = a % 2;
