@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 		{"%", print_mod},
 		{"i", print_int},
 		{"d", print_dec},
-		{"\0", NULL}
+		{NULL, NULL}
 	};
 	va_list list;
 
@@ -31,6 +31,8 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (!format[i])
+				return (-1);
 			j = 0;
 			while (j < 5)
 			{
