@@ -93,6 +93,7 @@ int print_int(va_list list)
 	{
 		_putchar('0');
 		digit = digit / 10;
+		i++;
 	}
 	return (i);
 }
