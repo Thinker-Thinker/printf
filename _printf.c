@@ -4,24 +4,17 @@
 /**
  * _printf - produces output according to format
  * @format: a character string
- *
  * Return: length of the string
  */
 int _printf(const char *format, ...)
 {
 	int i, t, j, len;
-	p_opt check[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{"%", print_mod},
-		{"i", print_int},
-		{"d", print_dec},
-		{NULL, NULL}
-	};
+	p_opt check[] = {{"c", print_char}, {"s", print_string},
+		{"%", print_mod}, {"i", print_int}, {"d", print_dec},
+		{NULL, NULL}};
 	va_list list;
 
-	len = 0;
-	i = 0;
+	len = i = 0;
 	va_start(list, format);
 	if (format == NULL)
 		return (-1);
