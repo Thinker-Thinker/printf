@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include "main.h"
+
 /**
  * print_dec - prints "%" character
  * @list: characters to be printed
