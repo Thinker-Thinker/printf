@@ -12,8 +12,6 @@ int print_bin(va_list list)
 	int arr[1024];
 
 	a = va_arg(list, int);
-	if (a <= 0)
-		return (-1);
 	for (i = 0; a > 0; i++)
 	{
 		arr[i] = a % 2;
