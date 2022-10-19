@@ -29,7 +29,7 @@ int print_bin(va_list list)
 	j = i;
 	for (; i > 0; i--)
 		_putchar(arr[i - 1]  + '0');
-	
+
 	return (j);
 }
 
@@ -50,7 +50,7 @@ int print_uint(va_list list)
 	if (a == 0)
 	{
 		_putchar('0');
-		return(1);
+		return (1);
 	}
 	if (a < 0)
 		return (0);
@@ -62,7 +62,7 @@ int print_uint(va_list list)
 	j = i;
 	for (; i > 0; i--)
 		_putchar(arr[i - 1]  + '0');
-	
+
 	return (j);
 }
 /**
@@ -81,7 +81,7 @@ int print_oct(va_list list)
 	if (a == 0)
 	{
 		_putchar('0');
-		return(1);
+		return (1);
 	}
 	if (a < 0)
 		return (0);
@@ -114,7 +114,7 @@ int print_hexa(va_list list)
 	if (a == 0)
 	{
 		_putchar('0');
-		return(1);
+		return (1);
 	}
 
 	for (i = 0; a > 0; i++)
@@ -131,7 +131,7 @@ int print_hexa(va_list list)
 	j = i;
 	for (; i > 0; i--)
 		_putchar(arr[i - 1]);
-	
+
 	return (j);
 }
 /**
@@ -150,7 +150,7 @@ int print_hexaC(va_list list)
 	if (a == 0)
 	{
 		_putchar('0');
-		return(1);
+		return (1);
 	}
 
 	for (i = 0; a > 0; i++)
@@ -167,6 +167,6 @@ int print_hexaC(va_list list)
 	j = i;
 	for (; i > 0; i--)
 		_putchar(arr[i - 1]);
-	
+
 	return (j);
 }
