@@ -12,7 +12,7 @@ int main(void)
 
 	printf("Numeric:\n");
 	printf("============\n");
-/* %i without param */
+	/* %i without param */
 	code = printf("Std: %i.\n");
 	printf("Std Returns: %d\n", code);
 	code = _printf("Our: %i.\n");

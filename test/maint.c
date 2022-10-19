@@ -3,14 +3,10 @@
 
 
 /**
-
-   * main - Entry point
-
-    *
-
-     * Return: Always 0
-
-      */
+ * main - entry point
+ *
+ * Return: (0)
+ */
 
 int main(void)
 
@@ -19,14 +15,13 @@ int main(void)
 
 	 yeah =   printf("%b\n", 0);
 	 printf("std %i", yeah);
-	   yeah = printf("%b\n", -1);
+	 yeah = printf("%b\n", -1);
 	 printf("std %i", yeah);
 	 yeah =	    _printf("%b\n", 0);
 	 printf("our %i", yeah);
-
-yeah =	    _printf("%b\n", -1);
+	 yeah =_printf("%b\n", -1);
 	 printf("our %i", yeah);
 
-	        return (0);
+	 return (0);
 
 }
