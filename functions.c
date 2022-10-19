@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <limits.h>
 #include <unistd.h>
 /**
 * print_string - Prints a string
@@ -58,12 +59,18 @@ int print_mod(va_list list)
  */
 int print_int(va_list list)
 {
-	int i, exp, digit, t, n, a, expo;
+	int i, exp, digit, min, t, n, a, expo;
 
 	exp = expo = 1;
 	i = t = 0;
 	a = va_arg(list, int);
-	if (a < 0)
+	min = a;
+	if (a == INT_MIN)
+	{
+		_putchar('-');
+		a = INT_MAX;
+	}
+	else if (a < 0)
 	{
 		_putchar('-');
 		a = a * -1;
@@ -79,6 +86,13 @@ int print_int(va_list list)
 	digit = expo;
 	while (a != 0)
 	{
+		if (min == INT_MIN && i == 9)
+		{
+			_putchar('8');
+			return (i + 2);
+		}
+
+
 		n = a / expo + '0';
 		_putchar(n);
 		a = a % expo;
