@@ -8,11 +8,11 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, t, j, len;
+	int i, j, len;
 	p_opt check[] = {{"c", print_char}, {"s", print_string},
 		{"%", print_mod}, {"i", print_int}, {"d", print_dec},
 		{"o", print_oct}, {"x", print_hexa}, {"u", print_uint},
-		{"X", print_hexaC}, {"b", print_bin}, {NULL, NULL}};
+		{"X", print_hexaC}, {"b", print_bin}};
 	va_list list;
 
 	len = i = 0;
@@ -27,17 +27,21 @@ int _printf(const char *format, ...)
 			if (!format[i])
 				return (-1);
 			j = 0;
-			t = len;
-			while (j < 12)
+			while (j < 10)
 			{
 				if (format[i] == *(check[j].t))
 				{
 					len += check[j].f(list);
 					break;
 				}
+				else if (j == 9)
+				{
+					_putchar('%');
+					_putchar(format[i]);
+					len += 2;
+					break;
+				}
 				j++;
-				if (j == 11 && t == len)
-					return (-1);
 			}
 		}
 		else
