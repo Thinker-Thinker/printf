@@ -17,7 +17,7 @@ int print_bin(va_list list)
 	if (a == 0)
 	{
 		_putchar('0');
-		return(1);
+		return (1);
 	}
 	if (a < 0)
 		return (0);
