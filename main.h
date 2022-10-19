@@ -15,6 +15,10 @@ int (*f)(va_list);
 
 } p_opt;
 int print_bin(va_list list);
+int print_oct(va_list list);
+int print_uint(va_list list);
+int print_hexaC(va_list list);
+int print_hexa(va_list list);
 
 int print_mod(va_list list);
 int print_dec(va_list list);
